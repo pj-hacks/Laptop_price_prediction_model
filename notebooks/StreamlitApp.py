@@ -3,8 +3,11 @@ import joblib
 import numpy as np
 import pandas as pd
 
-# Load the saved pipeline
-pipeline = joblib.load("models/laptop_price_pipeline.pkl")
+#import os
+#pipeline_path = os.path.join("notebooks", "models", "laptop_price_pipeline.pkl")
+#pipeline = joblib.load(pipeline_path)
+pipeline = joblib.load("notebooks/models/laptop_price_pipeline.pkl")
+
 
 st.title("Laptop Price Prediction App For Group H")
 st.write("Fill in the details below to predict the laptop price.")
