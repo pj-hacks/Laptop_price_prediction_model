@@ -4,7 +4,9 @@ import pandas as pd
 import numpy as np
 
 # Load the trained pipeline
-pipeline = joblib.load("notebooks/models/laptop_price_pipeline.pkl")
+#pipeline = joblib.load("notebooks/models/laptop_price_pipeline.pkl")
+#pipeline = joblib.load("Laptop_price_prediction_model/notebooks/models/laptop_price_pipeline.pkl")
+pipeline = joblib.load("models/laptop_price_pipeline.pkl")
 
 st.title("Laptop Price Prediction App for Group H")
 st.write("Fill in the details below to predict the laptop price.")
