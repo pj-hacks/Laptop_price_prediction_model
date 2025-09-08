@@ -2,10 +2,18 @@ import streamlit as st
 import joblib
 import pandas as pd
 import numpy as np
+import os
 
-# Load the trained pipeline
-#pipeline = joblib.load("models/laptop_price_pipeline.pkl")
+# --- Load the trained pipeline ---
+model_path = os.path.join("models", "laptop_price_pipeline.pkl")
 
+if os.path.exists(model_path):
+    pipeline = joblib.load(model_path)
+else:
+    st.error(f"Model not found at {model_path}. Please make sure the file exists.")
+    st.stop()
+
+# --- App title ---
 st.title("Laptop Price Prediction App for Group H")
 st.write("Fill in the details below to predict the laptop price.")
 
@@ -29,7 +37,7 @@ inches = st.number_input("Screen Size (inches)", min_value=10.0, max_value=20.0,
 storage_gb = st.number_input("Storage (GB)", min_value=64, max_value=2000, value=512, step=64)
 
 # --- Compute PPI ---
-ppi = ((screen_w**2 + screen_h**2)**0.5) / inches
+ppi = ((screen_w ** 2 + screen_h ** 2) ** 0.5) / inches
 
 # --- Prediction button ---
 if st.button("Predict Price"):
@@ -51,5 +59,4 @@ if st.button("Predict Price"):
 
     # Predict
     prediction = pipeline.predict(input_data)[0]
-
     st.success(f"Estimated Laptop Price: **${prediction:,.2f}**")
