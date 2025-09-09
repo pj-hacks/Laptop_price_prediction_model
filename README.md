@@ -22,8 +22,7 @@ LaptopPricePrediction/
 │   │   └── y.csv
 │   └── raw
 │       └── laptop_price.csv
-├── Interpreting_Result
-│   └── Laptop_Price_Prediction_Report.docx
+├── Group H Report.docx
 ├── models
 │   └── laptop_price_pipeline.pkl
 ├── notebooks
