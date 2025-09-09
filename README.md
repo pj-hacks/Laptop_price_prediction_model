@@ -24,16 +24,16 @@ LaptopPricePrediction/
 │       └── laptop_price.csv
 ├── Interpreting_Result
 │   └── Laptop_Price_Prediction_Report.docx
+├── models
+│   └── laptop_price_pipeline.pkl
 ├── notebooks
 │   ├── 01_clean.ipynb
 │   ├── 02_eda.ipynb
 │   ├── 03_feature_engineering_extracted.ipynb
-│   ├── 04_model_building.ipynb
-│   ├── app.py
-│   └── models
-│       └── laptop_price_pipeline.pkl
+│   └── 04_model_building.ipynb
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── StreamlitApp.py
 
 ```
 
@@ -50,11 +50,14 @@ venv\Scripts\activate     #Windows
 pip install -r requirements.txt
 ```
 
-# 5. To run the streamlit app run 
+# 5. To run the streamlit app run
 ```
 cd notebooks
 streamlit run StreamlitApp.py
 ```
+
+### Click on the link to access streamlit app
+[Streamlit App](https://appapppy-8ilag6w4d7hofgdzb6v57s.streamlit.app/)
 
 
 
